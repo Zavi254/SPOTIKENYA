@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.toggle{
+    font-size: 30px;
+    cursor: pointer;
+}
+ul {
+    list-style-type: none;
+}
+ul li a{
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+#toggleIconOn{
+    display: none;
+}
+#farLeftNavigation > ul{
+    display: flex;
+}
+.navigation > ul > li{
+    margin-right: 60px;
+}
+#farRightNavigation > ul{
+    display: flex;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30x;
+    margin-top: 10px;
+}
