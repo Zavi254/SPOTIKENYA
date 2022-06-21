@@ -5,9 +5,16 @@
 body{
     font-family: 'Raleway', sans-serif;
 }
+header{
+    background-image: url('../img/bannerImage.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
 .fa-solid{
     font-size: 30px;
     cursor: pointer;
+    color: #fff;
 }
 #toggleIconOff{
     display: none;
@@ -18,7 +25,7 @@ ul {
 ul li a{
     text-decoration: none;
     font-size: 1.5rem;
-    color: #000000;
+    color: #fff;
 }
 #farLeftNavigation > ul{
     display: flex;
@@ -36,5 +43,38 @@ nav{
     display: flex;
     justify-content: space-around;
     margin-top: 30x;
-    margin-top: 10px;
+    padding-top: 10px;
+}
+.wordSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh
+}
+.wordSection > h1{
+    font-size: 3rem;
+    color: #fff;
+    font-family: 'Fruktur', cursive;
+}
+.wordSection > p{
+    color: #fff;
+    font-weight: 400;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.7rem;
+    margin-top: 50px;
+}
+#learnMoreBtn{
+    background: transparent;
+    border: 2px solid white;
+    padding: 18px 24px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: .2em;
+    vertical-align: center;
+    margin-top: 70px;
 }
