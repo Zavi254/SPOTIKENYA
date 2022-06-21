@@ -4,22 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(returnedData)
 
 const toggleButton = document.querySelector('#toggleIcon');
-const toggleButtonDark = document.querySelector('#toggleIconOff')
+const toggleButtonDark = document.querySelector('#toggleIconOff');
+const heroSection = document.querySelector('header')
 
 function parseResponse(response){
     return response.json()
 }
 function returnedData(data){
-
-
+    console.log(data)
 }
 
 function toggleButtonOn(icon){
     icon.addEventListener('click', () => {
-        // toggleButton.setAttribute('class', 'fa-solid fa-toggle-on');
         toggleButton.style.display = "none"
         toggleButtonDark.style.display = "block"
-        document.body.style.backgroundColor = "darkgrey"
+        // document.body.style.backgroundColor = "lightgrey"    
     })
 }
 function toggleButtonOff(icon){
@@ -31,10 +30,6 @@ function toggleButtonOff(icon){
 }
 toggleButtonOff(toggleButtonDark)
 toggleButtonOn(toggleButton);
-
-// function returnedData(data){
-//     console.log(data.mvids[6].strTrackThumb)
-// }
 
 })
 
