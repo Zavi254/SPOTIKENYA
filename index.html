@@ -31,14 +31,14 @@
                     <li><a href="#">About</a></li>
                 </ul>
             </div>
-            <div>
-                <i class="fa-solid fa-toggle-off toggle" id="toggleIcon"></i>
-                <i class="fa-solid fa-toggle-on toggle" id="toggleIconOff"></i>
-            </div>
         </nav>
         <div class="wordSection">
             <h1 class="heroSectionWords">Crafting Digital Experiences</h1>
             <p class="heroSectionWords">The work of music fans</p>
+            <div id="toggleIcons">
+                <i class="fa-solid fa-angle-left" id="toggleIcon"></i>
+                <i class="fa-solid fa-angle-right" id="toggleIconOff"></i>
+            </div>
             <a href="#albumHeading" id="learnMoreBtn">Learn More<i class="fa-solid fa-circle-arrow-down"></i></a>
         </div>
     </header>
@@ -48,18 +48,25 @@
     <section id="albums">
         <div>
             <img alt="Wicked Games Cover Photo" class="albumPhotos">
-            <h1>Title</h1>
-            <p>Sample Paragraph</p>
+            <div>
+                <h1 id="wickedTitle"></h1>
+                <p id="wickedContent"></p>
+            </div>
         </div>
         <div>
             <img alt="The Knowing Cover Photo" class="albumPhotos">
-            <h1>Title</h1>
-            <p>Sample Paragraph</p>
+            <div>
+                <h1 id="knowingTitle">Title</h1>
+                <p id="knowingCover"></p>
+            </div>  
         </div>
         <div>
             <img alt="Twenty Eight" class="albumPhotos">
-            <h1>Title</h1>
-            <p>Sample Paragraph</p>
+            <div>
+                <h1 id="twentyTitle">Title</h1>
+                <p id="twentyEightDescription"></p>
+            </div>
+            
         </div>
     </section>
 
