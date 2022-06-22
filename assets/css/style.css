@@ -85,15 +85,18 @@ nav{
     margin-top: 70px;
 }
 #albums > div{
-    border: 1px solid red;
-    width: 200px;
-    height: 100px;
-    border-radius: 7px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #fff;
+    cursor: pointer;
+}
+#albums div img{
+    width: 400px;
+    max-width: 100%;
+    /* border-radius: 7px; */
 }
 #albums{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding-top: 150px;
     background-image: url('../img/secondBanner.jpg');
