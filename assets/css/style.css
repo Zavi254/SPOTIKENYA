@@ -7,19 +7,16 @@ body{
     width: 100%;
 }
 header{
-    background-image: url('../img/bannerImage.jpg');
+    background-image: url('https://images.unsplash.com/photo-1444824775686-4185f172c44b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;
     height: 100vh;
 }
 .fa-solid{
-    font-size: 30px;
+    font-size: 3rem;
     cursor: pointer;
     color: #fff;
-}
-#toggleIconOff{
-    display: none;
 }
 ul {
     list-style-type: none;
@@ -28,6 +25,7 @@ ul li a{
     text-decoration: none;
     font-size: 1.5rem;
     color: #fff;
+    font-weight: 600;
 }
 #farLeftNavigation > ul{
     display: flex;
@@ -112,4 +110,10 @@ nav{
     padding-bottom: 70px;
     font-size: 1.9rem;
     font-style: italic;
+}
+#toggleIcons{
+    display: flex;
+    /* border: 2px solid red; */
+    width: 100%;
+    justify-content: space-around;
 }
