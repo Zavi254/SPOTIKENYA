@@ -6,20 +6,44 @@ document.addEventListener("DOMContentLoaded", () => {
 const toggleButton = document.querySelector('#toggleIcon');
 const toggleButtonDark = document.querySelector('#toggleIconOff');
 const heroSection = document.querySelector('.heroSectionWords');
-const firstImage = document.querySelector('#firstImage');
+const albumPhotos = document.getElementsByClassName('albumPhotos');
+const wickedPhoto = albumPhotos[0];
+const theKnowing = albumPhotos[1]
+const twentyEight = albumPhotos[2]
+
 
 function parseResponse(response){
     return response.json()
 }
 function returnedData(data){
-   console.log(data)
+    function displayImage(){
+        albumPhotos[0].setAttribute(`src`, `${data.mvids[2].strTrackThumb}`)
+        albumPhotos[1].setAttribute(`src`, `${data.mvids[3].strTrackThumb}`)
+        albumPhotos[2].setAttribute(`src`, `${data.mvids[4].strTrackThumb}`)
+    }
+    function coverPhotosHover(){
+        wickedPhoto.addEventListener('mouseover', () => {
+
+        })
+        theKnowing.addEventListener('mouseover', () => {
+
+        })
+        twentyEight.addEventListener('mouseover', () => {
+            
+        })
+    }
+coverPhotosHover()
+displayImage()
+    
+    
+    console.log(data)
+
 }
 
 function toggleButtonOn(icon){
     icon.addEventListener('click', () => {
         toggleButton.style.display = "none"
         toggleButtonDark.style.display = "block"
-        // document.body.style.backgroundColor = "lightgrey"    
         heroSection.style.color = "#1DB954"
     })
 }
