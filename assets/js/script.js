@@ -10,6 +10,7 @@ const albumPhotos = document.getElementsByClassName('albumPhotos');
 const wickedPhoto = albumPhotos[0];
 const theKnowing = albumPhotos[1]
 const twentyEight = albumPhotos[2]
+const header = document.querySelector('header')
 
 
 function parseResponse(response){
@@ -23,13 +24,13 @@ function returnedData(data){
     }
     function coverPhotosHover(){
         wickedPhoto.addEventListener('mouseover', () => {
-
+            
         })
         theKnowing.addEventListener('mouseover', () => {
 
         })
         twentyEight.addEventListener('mouseover', () => {
-            
+
         })
     }
 coverPhotosHover()
@@ -42,16 +43,14 @@ displayImage()
 
 function toggleButtonOn(icon){
     icon.addEventListener('click', () => {
-        toggleButton.style.display = "none"
-        toggleButtonDark.style.display = "block"
         heroSection.style.color = "#1DB954"
+        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1487180144351-b8472da7d491?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80')"
     })
 }
 function toggleButtonOff(icon){
     icon.addEventListener("click", () => {
-        toggleButtonDark.style.display = "none"
-        toggleButton.style.display = "block"
         heroSection.style.color = "#fff"
+        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
     })
 }
 toggleButtonOff(toggleButtonDark)
