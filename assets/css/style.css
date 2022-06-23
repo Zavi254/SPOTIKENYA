@@ -85,7 +85,6 @@ nav{
     margin-top: 70px;
 }
 #albums > div{
-    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
     background-color: #fff;
     cursor: pointer;
     border-radius: 7px;
@@ -165,8 +164,19 @@ nav{
 }
 .albumContainer{
     display: none;
+    padding: 10px;
+    background-color: grey;
+    font-weight: 500;
+    color: #fff;
+}
+.gallery{
+    padding-top: 170px;
+    background-image: url('../img/secondBanner.jpg');
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
 }
 #gallerySection > div img{
-    opacity: 0.5;
+    filter: grayscale(100%);
     cursor: pointer;
 }
