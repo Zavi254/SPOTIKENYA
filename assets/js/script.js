@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
         galleryImages[0].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
         galleryImages[0].addEventListener(`mouseover`, () => {
-            galleryImages[0].style.opacity = "1"
+            galleryImages[0].style.filter = "grayscale(0%)"
         })
         galleryImages[0].addEventListener(`mouseout`, () => {
-            galleryImages[0].style.opacity = "0.5"
+            galleryImages[0].style.filter = "grayscale(100%)"
         })
     })
 
@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
      .then((data) => {
         galleryImages[1].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
         galleryImages[1].addEventListener(`mouseover`, () => {
-            galleryImages[1].style.opacity = "1"
+            galleryImages[1].style.filter = "grayscale(0%)"
         })
         galleryImages[1].addEventListener(`mouseout`, () => {
-            galleryImages[1].style.opacity = "0.5"
+            galleryImages[1].style.filter = "grayscale(100%)"
         })
      })
 
@@ -36,11 +36,49 @@ document.addEventListener("DOMContentLoaded", () => {
      .then((data) => {
         galleryImages[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
         galleryImages[2].addEventListener(`mouseover`, () => {
-            galleryImages[2].style.opacity = "1"
+            galleryImages[2].style.filter = "grayscale(0%)"
         })
         galleryImages[2].addEventListener(`mouseout`, () => {
-            galleryImages[2].style.opacity = "0.5"
+            galleryImages[2].style.filter = "grayscale(100%)"
         })
+     })
+
+     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=rihanna')
+     .then(response => response.json())
+     .then((data) => {
+        galleryImages[3].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+        galleryImages[3].addEventListener(`mouseover`, () => {
+            galleryImages[3].style.filter = "grayscale(0%)"
+        })
+        galleryImages[3].addEventListener(`mouseout`, () => {
+            galleryImages[3].style.filter = "grayscale(100%)"
+        })
+     })
+
+     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=pitbull')
+     .then(response => response.json())
+     .then((data) => {
+        galleryImages[4].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+        galleryImages[4].addEventListener(`mouseover`, () => {
+            galleryImages[4].style.filter = "grayscale(0%)"
+        })
+        galleryImages[4].addEventListener(`mouseout`, () => {
+            galleryImages[4].style.filter = "grayscale(100%)"
+        })
+     })
+
+     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=diplo')
+     .then(response => response.json())
+     .then((data) => {
+        galleryImages[5].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+        galleryImages[5].addEventListener(`mouseover`, () => {
+            galleryImages[5].style.filter = "grayscale(0%)"
+        })
+        galleryImages[5].addEventListener(`mouseout`, () => {
+            galleryImages[5].style.filter = "grayscale(100%)"
+        })
+
+        console.log(data)
      })
 
 const toggleButton = document.querySelector('#toggleIcon');
