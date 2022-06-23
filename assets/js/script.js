@@ -7,6 +7,42 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
     .then(artistData)
 
+    fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=sia')
+    .then(response => response.json())
+    .then(data => {
+        galleryImages[0].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+        galleryImages[0].addEventListener(`mouseover`, () => {
+            galleryImages[0].style.opacity = "1"
+        })
+        galleryImages[0].addEventListener(`mouseout`, () => {
+            galleryImages[0].style.opacity = "0.5"
+        })
+    })
+
+    fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=marshmello')
+     .then(response => response.json())
+     .then((data) => {
+        galleryImages[1].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+        galleryImages[1].addEventListener(`mouseover`, () => {
+            galleryImages[1].style.opacity = "1"
+        })
+        galleryImages[1].addEventListener(`mouseout`, () => {
+            galleryImages[1].style.opacity = "0.5"
+        })
+     })
+
+     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=drake')
+     .then(response => response.json())
+     .then((data) => {
+        galleryImages[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+        galleryImages[2].addEventListener(`mouseover`, () => {
+            galleryImages[2].style.opacity = "1"
+        })
+        galleryImages[2].addEventListener(`mouseout`, () => {
+            galleryImages[2].style.opacity = "0.5"
+        })
+     })
+
 const toggleButton = document.querySelector('#toggleIcon');
 const toggleButtonDark = document.querySelector('#toggleIconOff');
 const heroSection = document.querySelector('.heroSectionWords');
@@ -19,7 +55,8 @@ const knowingContent = document.querySelector('#knowingCover');
 const readMoreBtn = document.querySelectorAll('.readMoreBtn');
 const twentyTitle = document.querySelector('#twentyTitle');
 const twentyDescription = document.querySelector('#twentyDescription');
-const albumFlex = document.querySelectorAll('.albumContainer')
+const albumFlex = document.querySelectorAll('.albumContainer');
+const galleryImages = document.querySelectorAll('.galleryImage')
 
 
 function parseResponse(response){
