@@ -105,13 +105,16 @@ nav{
     background-image: url('../img/secondBanner.jpg');
     background-attachment: fixed;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; 
+    background-color: red;
+    background-blend-mode: screen;
     height: 100vh;   
     gap: 20px;
     padding-bottom: 60px;
 }
 #albumHeading{
-    background-color: #fff;
+    background-color: black;
+    color: #fff;
     text-align: center;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -119,12 +122,14 @@ nav{
     font-style: italic;
 }
 .albumHeading{
-    background-color: #fff;
+    background-color: black;
+    color: #fff;
     text-align: center;
     padding-top: 50px;
     padding-bottom: 100px;
     font-size: 1.9rem;
     font-style: italic;
+    /* margin-bottom: 30px; */
 }
 #toggleIcons{
     display: flex;
@@ -175,8 +180,13 @@ nav{
     background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
+    background-color: blue;
+    background-blend-mode: screen;
 }
 #gallerySection > div img{
     filter: grayscale(100%);
     cursor: pointer;
+}
+.artistImage{
+    border-radius: 50%;
 }
