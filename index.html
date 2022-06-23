@@ -18,9 +18,9 @@
         <nav>
             <div id="farLeftNavigation" class="navigation">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Albums</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#topSection">Home</a></li>
+                    <li><a href="#albums">Albums</a></li>
+                    <li><a href="#gallerySection">Gallery</a></li>
                     <li><a href="#">Events</a></li>
                 </ul>
             </div>
@@ -42,14 +42,14 @@
             <a href="#albumHeading" id="learnMoreBtn">Learn More<i class="fa-solid fa-circle-arrow-down"></i></a>
         </div>
     </header>
-    <section id="albumHeading">
+    <div id="albumHeading">
         <h1>Albums</h1>
-    </section>
+    </div>
     <section id="albums">
         <div>
             <div class="imageContainer">
                 <img alt="Wicked Games Cover Photo" class="albumPhotos">
-                <a href="#readMoreBtn1" class="readMoreBtn" id="readMoreBtn1">Read More</a>
+                <a class="readMoreBtn" id="readMoreBtn1">Read More</a>
             </div>
             <div class="albumContainer">
                 <h1 id="wickedTitle"></h1>
@@ -59,7 +59,7 @@
         <div>
             <div class="imageContainer">
                 <img alt="The Knowing Cover Photo" class="albumPhotos">
-                <a href="#readMoreBtn2" class="readMoreBtn" id="readMoreBtn2">Read More</a>
+                <a class="readMoreBtn" id="readMoreBtn2">Read More</a>
             </div>
             <div class="albumContainer">
                 <h1 id="knowingTitle"></h1>
@@ -69,13 +69,25 @@
         <div>
             <div class="imageContainer">
                 <img alt="Twenty Eight" class="albumPhotos">
-                <a href="#readMoreBtn3" class="readMoreBtn" id="readMoreBtn3">Read More</a>
+                <a class="readMoreBtn" id="readMoreBtn3">Read More</a>
             </div>
             <div class="albumContainer">
                 <h1 id="twentyTitle"></h1>
                 <p id="twentyDescription"></p>
             </div>
             
+        </div>
+    </section>
+
+    <section id="gallerySection">
+        <div class="albumHeading">
+            <h1>Gallery</h1>
+        </div>
+        <div>
+            <img src="#" alt="" class="galleryImage" width="400">
+            <img src="#" alt="" class="galleryImage" width="500">
+            <img src="#" alt="" class="galleryImage" width="400">
+            <img src="#" alt="" class="galleryImage" width="400">
         </div>
     </section>
 
