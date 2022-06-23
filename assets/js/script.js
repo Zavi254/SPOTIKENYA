@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryImages[0].addEventListener(`mouseout`, () => {
             galleryImages[0].style.filter = "grayscale(100%)"
         })
+        artistImages[3].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
     })
 
     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=marshmello')
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryImages[1].addEventListener(`mouseout`, () => {
             galleryImages[1].style.filter = "grayscale(100%)"
         })
+        artistImages[1].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
      })
 
      fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=drake')
@@ -41,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryImages[2].addEventListener(`mouseout`, () => {
             galleryImages[2].style.filter = "grayscale(100%)"
         })
+        artistImages[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
      })
 
      fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=rihanna')
@@ -95,7 +98,9 @@ const twentyTitle = document.querySelector('#twentyTitle');
 const twentyDescription = document.querySelector('#twentyDescription');
 const albumFlex = document.querySelectorAll('.albumContainer');
 const galleryImages = document.querySelectorAll('.galleryImage')
+const artistImages = document.querySelectorAll('.artistImage')
 
+console.log(artistImages);
 
 function parseResponse(response){
     return response.json()
@@ -103,6 +108,7 @@ function parseResponse(response){
 
 function artistData(data){
     albumPhotos[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
+    artistImages[0].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
     twentyTitle.textContent = data.artists[0].strArtist
     twentyDescription.textContent = data.artists[0].strBiographyEN;
 }
@@ -110,6 +116,7 @@ function artistData(data){
 function returnedData(data){
         albumPhotos[0].setAttribute(`src`, `${data.mvids[2].strTrackThumb}`)
         albumPhotos[1].setAttribute(`src`, `${data.mvids[3].strTrackThumb}`)
+
         
     function readMoreDisplay(){
         readMoreBtn[0].addEventListener('click', () => {
