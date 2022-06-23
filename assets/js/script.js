@@ -1,11 +1,64 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector('#toggleIcon');
+    const toggleButtonDark = document.querySelector('#toggleIconOff');
+    const heroSection = document.querySelector('.heroSectionWords');
+    const albumPhotos = document.getElementsByClassName('albumPhotos');
+    const header = document.querySelector('header');
+    const wickedTitle = document.querySelector('#wickedTitle');
+    const  wickedContent = document.querySelector('#wickedContent');
+    const knowingTitle = document.querySelector('#knowingTitle');
+    const knowingContent = document.querySelector('#knowingCover');
+    const readMoreBtn = document.querySelectorAll('.readMoreBtn');
+    const twentyTitle = document.querySelector('#twentyTitle');
+    const twentyDescription = document.querySelector('#twentyDescription');
+    const albumFlex = document.querySelectorAll('.albumContainer');
+    const galleryImages = document.querySelectorAll('.galleryImage')
+    const artistImages = document.querySelectorAll('.artistImage');
+    const artistName = document.querySelectorAll('.artistName');
+    const searchField = document.querySelector('#searchField');
+    const searchIcon = document.querySelector('#searchIcon')
+
+    searchIcon.addEventListener('click', () => {
+        if (searchField.value === "khalid"){
+            alert('hello')
+        }
+    })
+
+
+
+
+    function artistData(data){
+        albumPhotos[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
+        artistImages[0].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
+        twentyTitle.textContent = data.artists[0].strArtist
+        twentyDescription.textContent = data.artists[0].strBiographyEN;
+        artistName[0].textContent = data.artists[0].strArtist
+    }
+    fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=khalid')
+    .then(response => response.json())
+    .then(artistData)
+
+
+
+
+    function toggleButtonOn(icon){
+        icon.addEventListener('click', () => {
+            heroSection.style.color = "#1DB954"
+            header.style.backgroundImage = "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
+        })
+    }
+    function toggleButtonOff(icon){
+        icon.addEventListener("click", () => {
+            heroSection.style.color = "#fff"
+            header.style.backgroundImage = "url('https://images.unsplash.com/photo-1576269601089-aad0bbfa4f11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
+        })
+    }
+
     fetch('https://theaudiodb.com/api/v1/json/2/mvid.php?i=112024')
     .then(parseResponse)
     .then(returnedData)
 
-    fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=khalid')
-    .then(response => response.json())
-    .then(artistData)
+    
 
     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=sia')
     .then(response => response.json())
@@ -17,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryImages[0].addEventListener(`mouseout`, () => {
             galleryImages[0].style.filter = "grayscale(100%)"
         })
-        artistImages[3].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
     })
 
     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=marshmello')
@@ -30,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryImages[1].addEventListener(`mouseout`, () => {
             galleryImages[1].style.filter = "grayscale(100%)"
         })
-        artistImages[1].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
      })
 
      fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=drake')
@@ -43,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
         galleryImages[2].addEventListener(`mouseout`, () => {
             galleryImages[2].style.filter = "grayscale(100%)"
         })
-        artistImages[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
      })
 
      fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=rihanna')
@@ -81,37 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
             galleryImages[5].style.filter = "grayscale(100%)"
         })
 
-        console.log(data)
      })
 
-const toggleButton = document.querySelector('#toggleIcon');
-const toggleButtonDark = document.querySelector('#toggleIconOff');
-const heroSection = document.querySelector('.heroSectionWords');
-const albumPhotos = document.getElementsByClassName('albumPhotos');
-const header = document.querySelector('header');
-const wickedTitle = document.querySelector('#wickedTitle');
-const  wickedContent = document.querySelector('#wickedContent');
-const knowingTitle = document.querySelector('#knowingTitle');
-const knowingContent = document.querySelector('#knowingCover');
-const readMoreBtn = document.querySelectorAll('.readMoreBtn');
-const twentyTitle = document.querySelector('#twentyTitle');
-const twentyDescription = document.querySelector('#twentyDescription');
-const albumFlex = document.querySelectorAll('.albumContainer');
-const galleryImages = document.querySelectorAll('.galleryImage')
-const artistImages = document.querySelectorAll('.artistImage')
-
-console.log(artistImages);
 
 function parseResponse(response){
     return response.json()
 }
 
-function artistData(data){
-    albumPhotos[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
-    artistImages[0].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
-    twentyTitle.textContent = data.artists[0].strArtist
-    twentyDescription.textContent = data.artists[0].strBiographyEN;
-}
+
 
 function returnedData(data){
         albumPhotos[0].setAttribute(`src`, `${data.mvids[2].strTrackThumb}`)
@@ -150,18 +177,7 @@ displayCoverPhotoDescription()
 
 
 
-function toggleButtonOn(icon){
-    icon.addEventListener('click', () => {
-        heroSection.style.color = "#1DB954"
-        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
-    })
-}
-function toggleButtonOff(icon){
-    icon.addEventListener("click", () => {
-        heroSection.style.color = "#fff"
-        header.style.backgroundImage = "url('https://images.unsplash.com/photo-1576269601089-aad0bbfa4f11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
-    })
-}
+
 toggleButtonOff(toggleButtonDark)
 toggleButtonOn(toggleButton);
 
