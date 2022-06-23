@@ -188,7 +188,9 @@ nav{
     cursor: pointer;
 }
 #artistSection{
-    padding-bottom: 200px;
+    padding-bottom: 100px;
+    background-size: cover;
+    background-position: center center;
 }
 .artistName{
     margin-bottom: 70px;
@@ -227,4 +229,14 @@ input[type="text"]{
     justify-content: space-between;
     box-shadow: 0px 1px 3px #666666;
     padding: 10px;
+}
+#artistDescriptionContainer{
+    height: auto;
+    width: 600px;
+    background-color: #666666;
+    box-shadow: 0px 1px 3px #666666;
+    border-radius: 7px;
+    color: #000000;
+    padding: 10px;
+    font-size: 1.2rem;
 }

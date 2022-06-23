@@ -16,49 +16,101 @@ document.addEventListener("DOMContentLoaded", () => {
     const artistImages = document.querySelectorAll('.artistImage');
     const artistName = document.querySelectorAll('.artistName');
     const searchField = document.querySelector('#searchField');
-    const searchIcon = document.querySelector('#searchIcon')
+    const searchIcon = document.querySelector('#searchIcon');
+    const artist = {
+        Name: document.querySelector('.artistName'),
+        Gender:document.querySelector('#gender') ,
+        Image: document.querySelector('.artistImage'),
+        Description: document.querySelector('#artistDescription'),
+        Country: document.querySelector('#country'),
+        BornYear: document.querySelector('#yearBorn'),
+        BackgroundImage: document.querySelector('#artistSection'),
+        Genre :document.querySelector('#genre')
+    }
 
     searchIcon.addEventListener('click', () => {
-        if (searchField.value === "khalid"){
-            alert('hello')
-        }
+        fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=khalid')
+        .then(response => response.json())
+        .then(data => {
+            if(searchField.value === "Khalid"){
+                artist.Name.textContent = data.artists[0].strArtist
+                artist.Description.textContent = data.artists[0].strBiographyEN
+                artist.Country.textContent = data.artists[0].strCountry
+                artist.BornYear.textContent = data.artists[0].intBornYear
+                artist.Gender.textContent = data.artists[0].strGender
+                artist.BackgroundImage.style.backgroundImage = "url('https://wallpapercave.com/dwp1x/wp2129684.png')"
+                artist.Genre.textContent = data.artists[0].strGenre
+                artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+            }
+        fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=sia')
+         .then(response => response.json())
+         .then(data => {
+             if(searchField.value === "Sia"){
+                artist.Name.textContent = data.artists[0].strArtist
+                artist.Description.textContent = data.artists[0].strBiographyEN
+                artist.Country.textContent = data.artists[0].strCountry
+                artist.BornYear.textContent = data.artists[0].intBornYear
+                artist.Gender.textContent = data.artists[0].strGender
+                artist.BackgroundImage.style.backgroundImage = "url('https://images.squarespace-cdn.com/content/v1/57d05107893fc0df0e6c8c33/1594256936387-9U0JB4T0VTKF7A2BHCBA/sia_site.png?format=2500w')"
+                artist.Genre.textContent = data.artists[0].strGenre
+                artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+             }
+             fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=marshmello')
+                .then(response => response.json())
+                .then(data => {
+                    if(searchField.value === "Marshmello"){
+                        artist.Name.textContent = data.artists[0].strArtist
+                        artist.Description.textContent = data.artists[0].strBiographyEN
+                        artist.Country.textContent = data.artists[0].strCountry
+                        artist.BornYear.textContent = data.artists[0].intBornYear
+                        artist.Gender.textContent = data.artists[0].strGender
+                        artist.BackgroundImage.style.backgroundImage = "url('https://cdn.shopify.com/s/files/1/0012/5278/6285/files/Untitled-2.png?v=1642114837')"
+                        artist.Genre.textContent = data.artists[0].strGenre
+                        artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+                     }
+            fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=drake')
+               .then(response => response.json())
+               .then(data => {
+                if(searchField.value === "Drake"){
+                    artist.Name.textContent = data.artists[0].strArtist
+                    artist.Description.textContent = data.artists[0].strBiographyEN
+                    artist.Country.textContent = data.artists[0].strCountry
+                    artist.BornYear.textContent = data.artists[0].intBornYear
+                    artist.Gender.textContent = data.artists[0].strGender
+                    artist.BackgroundImage.style.backgroundImage = "url('https://i.pinimg.com/564x/51/e8/e1/51e8e13b3be9c76f3007372e6efa3e89.jpg')"
+                    artist.Genre.textContent = data.artists[0].strGenre
+                    artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+                 }
+               })
+                })
+         })
+        
+        })
     })
 
 
 
+
+    
+
+
+
+
+    fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=khalid')
+    .then(response => response.json())
+    .then(artistData)
 
     function artistData(data){
         albumPhotos[2].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
         artistImages[0].setAttribute(`src`, `${data.artists[0].strArtistThumb}`);
         twentyTitle.textContent = data.artists[0].strArtist
         twentyDescription.textContent = data.artists[0].strBiographyEN;
-        artistName[0].textContent = data.artists[0].strArtist
-    }
-    fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=khalid')
-    .then(response => response.json())
-    .then(artistData)
-
-
-
-
-    function toggleButtonOn(icon){
-        icon.addEventListener('click', () => {
-            heroSection.style.color = "#1DB954"
-            header.style.backgroundImage = "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
-        })
-    }
-    function toggleButtonOff(icon){
-        icon.addEventListener("click", () => {
-            heroSection.style.color = "#fff"
-            header.style.backgroundImage = "url('https://images.unsplash.com/photo-1576269601089-aad0bbfa4f11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
-        })
+        artistName[0].textContent = data.artists[0].strArtist 
     }
 
     fetch('https://theaudiodb.com/api/v1/json/2/mvid.php?i=112024')
     .then(parseResponse)
     .then(returnedData)
-
-    
 
     fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=sia')
     .then(response => response.json())
@@ -134,6 +186,20 @@ document.addEventListener("DOMContentLoaded", () => {
      })
 
 
+
+
+    function toggleButtonOn(icon){
+        icon.addEventListener('click', () => {
+            heroSection.style.color = "#1DB954"
+            header.style.backgroundImage = "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
+        })
+    }
+    function toggleButtonOff(icon){
+        icon.addEventListener("click", () => {
+            heroSection.style.color = "#fff"
+            header.style.backgroundImage = "url('https://images.unsplash.com/photo-1576269601089-aad0bbfa4f11?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')"
+        })
+    }
 function parseResponse(response){
     return response.json()
 }
