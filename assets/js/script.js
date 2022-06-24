@@ -81,6 +81,48 @@ document.addEventListener("DOMContentLoaded", () => {
                     artist.Genre.textContent = data.artists[0].strGenre
                     artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
                  }
+            fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=pitbull')
+            .then(response => response.json())
+            .then(data => {
+                if(searchField.value === "Pitbull"){
+                    artist.Name.textContent = data.artists[0].strArtist
+                    artist.Description.textContent = data.artists[0].strBiographyEN
+                    artist.Country.textContent = data.artists[0].strCountry
+                    artist.BornYear.textContent = data.artists[0].intBornYear
+                    artist.Gender.textContent = data.artists[0].strGender
+                    artist.BackgroundImage.style.backgroundImage = "url('https://pitbullmusic.com/wp-content/themes/pitbull-theme/assets/img/home-header.png')"
+                    artist.Genre.textContent = data.artists[0].strGenre
+                    artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+                 }
+            fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=rihanna')
+              .then(response => response.json())
+              .then(data => {
+                if(searchField.value === "Rihanna"){
+                    artist.Name.textContent = data.artists[0].strArtist
+                    artist.Description.textContent = data.artists[0].strBiographyEN
+                    artist.Country.textContent = data.artists[0].strCountry
+                    artist.BornYear.textContent = data.artists[0].intBornYear
+                    artist.Gender.textContent = data.artists[0].strGender
+                    artist.BackgroundImage.style.backgroundImage = "url('http://www.rihannanow.com/wp-content/uploads/2015/09/20150831_Macys_RiRi_0804-682x1024.jpg')"
+                    artist.Genre.textContent = data.artists[0].strGenre
+                    artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+                 }
+            fetch('https://www.theaudiodb.com/api/v1/json/2/search.php?s=diplo')
+                .then(response => response.json())
+                .then(data => {
+                    if(searchField.value === "Diplo"){
+                        artist.Name.textContent = data.artists[0].strArtist
+                        artist.Description.textContent = data.artists[0].strBiographyEN
+                        artist.Country.textContent = data.artists[0].strCountry
+                        artist.BornYear.textContent = data.artists[0].intBornYear
+                        artist.Gender.textContent = data.artists[0].strGender
+                        artist.BackgroundImage.style.backgroundImage = "url('https://www4.pictures.zimbio.com/gi/Diplo+Los+Angeles+Premiere+MGM+House+Gucci+Olmwfpt9zkMx.jpg')"
+                        artist.Genre.textContent = data.artists[0].strGenre
+                        artist.Image.setAttribute(`src`, `${data.artists[0].strArtistThumb}`)
+                     } 
+                })
+              })
+            })
                })
                 })
          })
