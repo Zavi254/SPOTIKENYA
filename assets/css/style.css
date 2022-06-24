@@ -1,10 +1,10 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Raleway', sans-serif;
-    width: 100%;
 }
 header{
     background-image: url('https://images.unsplash.com/photo-1444824775686-4185f172c44b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
@@ -18,45 +18,34 @@ header{
     cursor: pointer;
     color: #fff;
 }
-ul {
-    list-style-type: none;
-}
 ul li a{
     text-decoration: none;
     font-size: 1.5rem;
     color: #fff;
     font-weight: 600;
 }
-#farLeftNavigation > ul{
-    display: flex;
+ul li{
+    list-style-type: none;
 }
-.navigation > ul > li{
-    margin-right: 30px;
-}
-#farRightNavigation > ul{
-    display: flex;
-}
-#logoImage{
-    margin-left: 10px;
-}
-nav{
+ul{
     display: flex;
     justify-content: space-around;
-    margin-top: 30x;
     padding-top: 10px;
     padding-bottom:19px ;
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     background-color: #000000;
     z-index: 1000;
+    max-width: 100%;
 }
 .wordSection{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh
+    height: 100vh;
 }
 .wordSection > h1{
     font-size: 3rem;
@@ -241,4 +230,7 @@ input[type="text"]{
     color: #000000;
     padding: 10px;
     font-size: 1.2rem;
+}
+.heroSectionWords{
+    color: #1DB954 !important;
 }
